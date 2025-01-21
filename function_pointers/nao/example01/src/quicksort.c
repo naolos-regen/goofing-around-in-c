@@ -1,5 +1,6 @@
 #include "../include/include.h"
 
+//	Example from page 108 The C Programming Language
 void	swap_vars(void **data, int i, int j)
 {
 	void	*tmp;
@@ -8,7 +9,7 @@ void	swap_vars(void **data, int i, int j)
 	data[i] = data[j];
 	data[j] = tmp;
 }
-
+//	Example from page 107 The C Programming Language
 void	quicksort(void **data, int left, int right, int (*compar)(void *,
 			void *))
 {
