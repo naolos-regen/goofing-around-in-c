@@ -41,6 +41,9 @@ struct bar2
 	
 			  // as then same as it goes but bar2.0b1111 != bar.0b1111 ?
 			  // comparing that is tough, but comapring the insides of struct is the same
+			  // in a sense of comparing the same insides with same insides, it wont provide me the nessesary
+			  // comparison.
+			  // however I'll checkout the objdump
 };
 
 int	compare_structs(const struct bar *bar1, const struct bar2 *bar2)
