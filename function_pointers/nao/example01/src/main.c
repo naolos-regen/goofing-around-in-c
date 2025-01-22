@@ -15,6 +15,6 @@ int	main(void)
 	}
 	quicksort(data, 0, n - 1, int_compar);
 	printf("---------------------------------------\n");
-	ft_foreach(data, n, sizeof(void *), print_pointer);
+	ft_foreach(data, n, sizeof(void *), print_char);
 	return (0);
 }

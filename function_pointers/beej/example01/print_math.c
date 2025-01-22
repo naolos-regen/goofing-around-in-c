@@ -15,7 +15,6 @@ void	print_math(int (*op)(int, int), int x, int y)
 	int	res;
 
 	res = op(x, y);
-
 	printf("%d\n", res);
 }
 
