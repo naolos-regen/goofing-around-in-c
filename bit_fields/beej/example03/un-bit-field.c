@@ -39,10 +39,14 @@ struct bar2
 	unsigned int c:3; // packs 2 unsigned int cause we splitted them using zero unnamed bitfield
 	unsigned int d:4; // len2 = 4 bytes + len = 4 bytes + 4 bytes = 8 bytes in total
 	
-			  // as then same as it goes but bar2.0b1111 != bar.0b1111 ?
-			  // comparing that is tough, but comapring the insides of struct is the same
-			  // in a sense of comparing the same insides with same insides, it wont provide me the nessesary
-			  // comparison.
+// Even if the bit-field values in bar2 and bar are the same (e.g., 0b1111),
+// we cannot directly compare the two structs (e.g., bar2 != bar).
+// This is because structs in C cannot be directly compared; their memory layout that includes padding 
+// and alignment differences that make direct equality invalid, even if the bit-field contents match.
+// Structs only hold addresses to their data fields, and comparing structs directly would require
+// a mechanism to compare all individual fields and their layouts (hash-code). 
+// This behavior also depends on the
+// compiler and platform, which determine how structs are packed in memory.
 
 };
 
