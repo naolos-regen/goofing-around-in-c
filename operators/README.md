@@ -44,3 +44,39 @@ It is a simple understanding process, however it may not be clear to some. Let's
 | GREATER THAN OR EQUAL TO | x >= y  | 6 L-R        |
 | LESSER THAN OR EQUAL TO  | x <= y  | 6 L-R        |
 | THREE WAY COMPARISON     | x <=> y | NOT POSSIBLE |
+
+## Logical Opearators
+
+| OPERATOR NAME            | SYNTAX  | PREDECENCE   | ASSEMBLY   |
+| ------------------------ | ------- | ------------ | ---------- |
+| Logical Negation (NOT)   | !x      | 2  L-R       | NOT x      |
+| Logical AND              | x && y  | 11 L-R       | AND x, y   |
+| Logical OR               | x || y  | 11 L-R       | OR  x, y   |
+
+Assembly AND/OR <Destination> <Source> ; NOT <Destination> which does <destination> = ~<destination>
+not to confuse it with NEG, NEG takes 2 Complements to negate and NOT takes only one
+
+## Bitwise Operators
+
+| OPERATOR NAME            | SYNTAX  | PREDECENCE    |
+| ------------------------ | ------- | ------------- |
+| Bitwise NOT              | ~x      | 2 R-L         |
+| Bitwise AND*             | x & y   | 8 L-R         |
+| Bitwise OR               | x | y   | 10 L-R        |
+| Bitwise XOR              | x ^ y   | 9 L-R         |
+| Bitwise Left Shift       | x << y  | 5 L-R         |
+| Bitwise Right Shift      | x >> y  | 5 L-R         |
+
+* Not to confuse that with the Address-of
+```c
+int main(void)
+{
+    int i;
+    void * a;
+ 
+    i = 0;
+    a = &i;
+
+    return (0);
+}
+```
