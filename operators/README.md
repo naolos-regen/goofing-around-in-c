@@ -51,7 +51,7 @@ It is a simple understanding process, however it may not be clear to some. Let's
 | ------------------------ | ------- | ------------ | ---------- |
 | Logical Negation (NOT)   | !x      | 2  L-R       | NOT x      |
 | Logical AND              | x && y  | 11 L-R       | AND x, y   |
-| Logical OR               | x || y  | 11 L-R       | OR  x, y   |
+| Logical OR               | %x || y$| 11 L-R       | OR  x, y   |
 
 Assembly AND/OR <Destination> <Source> ; NOT <Destination> which does <destination> = ~<destination>
 not to confuse it with NEG, NEG takes 2 Complements to negate and NOT takes only one
@@ -62,12 +62,12 @@ not to confuse it with NEG, NEG takes 2 Complements to negate and NOT takes only
 | ------------------------ | ------- | ------------- |
 | Bitwise NOT              | ~x      | 2 R-L         |
 | Bitwise AND*             | x & y   | 8 L-R         |
-| Bitwise OR               | x | y   | 10 L-R        |
+| Bitwise OR               | $x | y$ | 10 L-R        |
 | Bitwise XOR              | x ^ y   | 9 L-R         |
 | Bitwise Left Shift       | x << y  | 5 L-R         |
 | Bitwise Right Shift      | x >> y  | 5 L-R         |
 
-* Not to confuse that with the Address-of
+* Not to confuse that with the Address-of this will be seen later on
 ```c
 int main(void)
 {
@@ -80,3 +80,49 @@ int main(void)
     return (0);
 }
 ```
+
+Now Bitwise operators may seem overwhelming, however if you understand the principle of logic gates and boolean algebra, 
+you are more than happy to see them in a Programming Language.
+
+for instance we want to safely swap 2 integer variables with eatch-other without using any temporary new data
+that would go like this
+```c
+void ft_swap(int *a, int *b)
+{
+    *a ^= *b;
+    *b ^= *a;
+    *a ^= *b;
+}
+void funky_swap(int *a, int *b)
+{
+    a ^= b ^= a ^= b;
+}
+```
+or if you want to make it bit safe (electrical change of bits per say)
+```c
+void ft_swap(int *a, int *b)
+{
+    int c;
+
+    c = 1;
+    while (c)
+    {
+        if ((*a & c) != (*b & c))
+        {
+            *a ^= c;
+            *b ^= c;
+        }
+        c <<= 1;
+    }
+}
+```
+- [ ] go back to it and explain it using Boolean Algebra
+
+it's better learning that fact than trying to understand
+```python
+a = 2
+b = 9
+a,b = b,a
+```
+what happens here underhood. Tuple unpacking. creating a tuple and unpacking the tuple. Uhm I'll not try to gasp that for now
+- [ ] go back to it and explain tuples in different file cause fck it we ballin
