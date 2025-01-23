@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 
+// example C05/ex02/ft_iterative_power.c
 int	ft_iterative_power(int x, int y)
 {	
 	int	res;
@@ -20,7 +21,7 @@ int	ft_iterative_power(int x, int y)
 	}
 	return (res);
 }
-
+// example C05/ex03/ft_recursive_power.c
 int	ft_recursive_power(int x, int y)
 {
 	if (y < 0)
