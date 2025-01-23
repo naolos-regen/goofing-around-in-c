@@ -11,12 +11,14 @@ It is a simple understanding process, however it may not be clear to some. Let's
 | DIVISION       | $x / y$      | DIV x, y          | 3 L-R       |
 | REMAINDER      | x % y        | (ARM = MOD)**     | 3 L-R       |
 | POWER?         | $x ^ y$\|x^y | POW??             | ??????????? |
+| SQRT??         | $√x$         | SQRT?? LOL        | ??????????? | 
 | INCREMENT      | INC X        | INC X \| ADD 1, x |             |
 | Prefix INC     | $++x$        | see nao/example00 | 2 R-L       |
 | Postfix INC    | $x++$        | see nao/example01 | 1 L-R       |
 | DECREMENT      | DEC x        | DEC X \| SUB 1, x |             |
 | Prefix INC     | $--x$        | see nao/example00 | 2 R-L       |
 | Postfix INC    | $x++$        | see nao/example01 | 1 L-R       |
+
 - note that I'm not using 32-bit Register, 16-bit Register, 8-bit Register, or any Register not using Memory address not even any 32-bit immediate, 16-bit immediate, 8-bit immediate ... for the purpose of simply understanding what operator in CPU is used
 
 ** MOD operand exists in ARM, in x86 we need to do shanenigans in nao/example03
@@ -25,6 +27,10 @@ It is a simple understanding process, however it may not be clear to some. Let's
 #include <math.h> or using the one in nao/example03 :=D 
 [https://git.musl-libc.org/cgit/musl/tree/src/math/pow.c](https://git.musl-libc.org/cgit/musl/tree/src/math/pow.c) 
 ^ it gets pretty messy trying to explain that.
+
+**** same call as before either using #include <math.h> or trying to learn from nao/example03
+**credits example03/int_sqrt.c => int ft_sqrt(int nb)** [Cheyo](https://github.com/0yech)
+
 
 ## Comparison/Relational Operators
 
