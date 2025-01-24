@@ -127,3 +127,21 @@ Ait gotcha.
 | Structure reference   | x.y       | 1 L-R         |
 | Member selected by    | a->*y     | 1 L-R 2 R-L   |
 | Member of object selected by | a.*b   |  1 L-R 2 R-L |
+
+**Subscript**. in other words a mathematical equation of indirection (dereference)
+Accessing the $n^{th}$ element of array a? no
+$$(*(E1+E2)) = E1[E2]$$ which means $$(*(E2+E1)) = E2[E1]$$
+which in my mind means dereferencing the addition of an Address + the index
+see operators/nao/member_access_op/array.c & operators/nao/member_access_op/dynamic_array.c
+
+**Indirection (dereference) ("object pointed by a")**.
+
+**Address-of "address of a"**.
+
+**Structure dereference ("member b of object pointed to a")**.
+
+**Structure reference ("member b of object a")**.
+
+**Member selected by pointer-to-member b of object pointed by a**. Idk if that exists in C
+
+**Member of object selected by pointer-to-member b**. Idk if that exists in C
