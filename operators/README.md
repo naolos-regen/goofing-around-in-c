@@ -116,12 +116,12 @@ void ft_swap(int *a, int *b)
     }
 }
 ```
-- [ ] go back to it and explain it using Boolean Algebra
-IF THAT CONDITION $$((A \land C) \land \neg (B \land C)) \lor (\neg (A \land C) \land (B \land C))$$
-is true than
-A = $(A \land \neg C) \lor (\neg A \land C)$
-B = $(B \land \neg C) \lor (\neg B \land C)$
-that would mean if this works, so does the code
+IF THAT CONDITION:.
+$$((A \land C) \land \neg (B \land C)) \lor (\neg (A \land C) \land (B \land C))$$
+is true than.
+$$A = (A \land \neg C) \lor (\neg A \land C)$$
+$$B = (B \land \neg C) \lor (\neg B \land C)$$
+that would mean if this works, so does the code.
 
 ```c
 void	ft_swap(int *a, int *b)
