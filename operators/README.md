@@ -86,4 +86,44 @@ you are more than happy to see them in a Programming Language.
 
 more read under nao/swap_vars/README.md
 
+## Assignment operator
 
+| Operator name             | Syntax  | PREDECENCE   |
+| ------------------------- | ------- | ------------ |
+| Direct Assignment         | x = y   | 14 R-L       |
+| Addition Assignment       | x += y  | 14 R-L       |
+| Subtraction Assignment    | x -= y  | 14 R-L       |
+| Multiplication Assignment | x *= y  | 14 R-L       |
+| Division Assignment       | x /= y  | 14 R-L       |
+| Remainder Assignment      | x %= y  | 14 R-L       |
+| Bitwise AND assignment    | x &= y  | 14 R-L       |
+| Bitwise OR assignment     | x |= y  | 14 R-L       |
+| Bitwise XOR assignment    | x ^= y  | 14 R-L       |
+| Bitwise left shift ...    | x <<= y | 14 R-L       |
+| Bitwise right shift ...   | x >>= y | 14 R-L       |
+
+"Assignment operators' left operands must be unary (level-2 non-cast) expressions. This rule gramatically forbids some expressions that would be semantically invalid anyway. Many compilers ignore this rule and detect the invalidity semantically. For example, ``e = a < c ? a++ : a = d`` is an expression that cannot be parsed because of this rule. However, many compilers ignore this rule and parse it as ``e = ( ((a<d) ? (a++) : a) = d )``, and then give an error because it is semantically invalid." (cppreference.com)
+
+**What?**
+The left side of ``=`` must be a variable or something you can assign to.
+You can not assign to the result of a tenary operator ``?:``.
+in ``e = a < d ? a++ : a = d``, the tenary operator is the problem.
+This code tries to assign d to the result of the tenary operator.
+Gramatically, this is invalid and should not compile.
+Some compilers ignore the grammar rule and try to interpret it.
+They treat the code as ``e = (((a < d) ? (a++) : a) = d)``.
+Then, they throw an error because you're assigning to an invalid expression.
+
+Ait gotcha.
+
+## Member and Pointer Operators
+
+| OPERATOR NAME         | SYNTAX    | PREDECENCE    |
+| --------------------- | --------- | ------------- |
+| Subscript             | ``x[y]``  | 1 L-R         |
+| Indirection           | *x        | 2 R-L         |
+| Address-of            | &x        | 2 L-R         |
+| Structure dereference | x->y      | 1 L-R         |
+| Structure reference   | x.y       | 1 L-R         |
+| Member selected by    | a->*y     | 1 L-R 2 R-L   |
+| Member of object selected by | a.*b   |  1 L-R 2 R-L |
