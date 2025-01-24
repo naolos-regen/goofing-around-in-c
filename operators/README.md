@@ -117,6 +117,31 @@ void ft_swap(int *a, int *b)
 }
 ```
 - [ ] go back to it and explain it using Boolean Algebra
+IF THAT CONDITION $$((A \land C) \land \neg (B \land C)) \lor (\neg (A \land C) \land (B \land C))$$
+is true than
+A = $(A \land \neg C) \lor (\neg A \land C)$
+B = $(B \land \neg C) \lor (\neg B \land C)$
+that would mean if this works, so does the code
+
+```c
+void	ft_swap(int *a, int *b)
+{
+	int	c;
+
+	c = 1;
+	while (c)
+	{
+		if (((*a & c) & ~(*b & c)) | (~(*a & c) & (*b & c)))
+		{
+			*a = ((*a & ~c) | (~*a & c));
+			*b = ((*b & ~c) | (~*b & c));
+		}
+		c <<= 1;
+	}
+}
+```
+
+
 
 it's better learning that fact than trying to understand
 ```python
@@ -126,3 +151,4 @@ a,b = b,a
 ```
 what happens here underhood. Tuple unpacking. creating a tuple and unpacking the tuple. Uhm I'll not try to gasp that for now
 - [ ] go back to it and explain tuples in different file cause fck it we ballin
+
