@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// goofy asf, but it works :'D
 void	ft_swap(int *a, int *b)
 {
 	int	c;

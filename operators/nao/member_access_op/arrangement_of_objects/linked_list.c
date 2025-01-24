@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//42/pisicine/C12/ex00-ex04
 typedef struct s_list
 {
 	struct s_list	*next;

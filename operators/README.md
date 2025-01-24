@@ -138,13 +138,30 @@ which in my mind means dereferencing the addition of an Address + the index
 see operators/nao/member_access_op/array.c & operators/nao/member_access_op/dynamic_array.c
 
 **Indirection (dereference) ("object pointed by a")**.
+dereferencing what is held by the pointer (address of a variables)
+```c
+void    ft_ultimate_ft(int ********nbr)
+{
+        ********nbr = 42;
+}
+```
+dereference that and write it using <unistd.h> it's ho job now
 
 **Address-of "address of a"**.
+see /operators/nao/member_access_op/address_of/main.c & README.md
 
 **Structure dereference ("member b of object pointed to a")**.
+a structure dereference is only when we create the structure or a union as a set of many structures or unions within the memory.
 
 **Structure reference ("member b of object a")**.
+Structure reference means that you are refering to what is inside of a single structure :-D.
 
 **Member selected by pointer-to-member b of object pointed by a**. Idk if that exists in C
+to actually change the value of the dereferenced structure variable you have to do this arithmetic
+``*(x->y) = a``
 
 **Member of object selected by pointer-to-member b**. Idk if that exists in C
+same goes here if you want to change the referenced single structure variable you have to do this
+``*(x.y) = a``
+
+SOOOO after that I think it's all completed ;(

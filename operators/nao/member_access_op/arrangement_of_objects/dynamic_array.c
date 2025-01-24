@@ -4,8 +4,8 @@
 // easier definition
 typedef struct s_dynamic_array
 {
-	int	*ptr;
-	int	size;
+	void	*ptr;
+	unsigned const int	size;
 }		t_dynamic_array;
 
 // definition in C
