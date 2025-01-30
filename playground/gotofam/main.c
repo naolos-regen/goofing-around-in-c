@@ -18,4 +18,3 @@ int 	main(void)
 		printf("%d! == %d\n", i ,factorial(i,1));
 	return (0);
 }
-
